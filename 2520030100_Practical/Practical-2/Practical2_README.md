@@ -22,7 +22,7 @@ Used the `strace` utility with the command:
 strace cat sample.txt
 ```
 
-The `strace` output shows that the `cat` command accesses the file using system calls such as `openat()` and then transfers the file contents to the terminal. The file is finally closed using `close()`.
+The `strace` output shows that the `cat` command accesses the file using system calls such as `open()` and then transfers the file contents to the terminal. The file is finally closed using `close()`.
 
 This shows that when a user-space command needs to access a file, it requests the required services from the Linux kernel through system calls.
 
