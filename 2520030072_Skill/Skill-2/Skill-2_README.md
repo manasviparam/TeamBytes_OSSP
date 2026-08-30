@@ -40,6 +40,10 @@ To build the main loop of a simple command-line shell in C — one that shows a 
 | `break` | Immediately exits the loop. |
 | `char input[100]` | An array (buffer) that stores the typed command. |
 
+## Handling the Enter Key and Backspace
+- **Enter key:** Pressing **Enter** marks the end of a command. `scanf("%s", input)` reads characters until it reaches the Enter (or a space), so the Enter key is what tells the program the command is finished and ready to be processed. After that, the loop checks the command and either exits or echoes it.
+- **Backspace:** While the user is typing, the terminal runs in its normal (*canonical*) mode, which handles line editing automatically. Pressing **Backspace** deletes the last character *before* the line is sent to the program — so the user can fix typos, and the program receives only the final, corrected command in its input buffer.
+
 ## What We Understood
 - A **shell** is just a program that runs in a loop: show a prompt, read a command, act on it, and repeat.
 - `while(1)` keeps the shell running, and `break` (when the user types `exit`) is what stops it.
