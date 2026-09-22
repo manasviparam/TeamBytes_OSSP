@@ -36,16 +36,16 @@ To create multiple child processes and synchronize their completion using `wait(
 | `waitpid()` | Waits for a specific child process |
 
 
-Compilation and Execution:
+## Compilation and Execution:
 
-gcc waitex.c
-./a.out
+- gcc waitex.c
+- ./a.out
 
-gcc Zombie.c
-./a.out
+- gcc Zombie.c
+- ./a.out
 
 
-Output:
+## Output:
 
 child 2 pid = 3152
 child 1 pid = 3151
@@ -58,7 +58,7 @@ parent process 7000
 child process 7001
 Parent process completed
 
-What We Learnt / Understood
+## What We Learnt / Understood:
 
 How a parent process creates and manages child processes.
 Difference between wait() and waitpid().
@@ -67,12 +67,12 @@ How a zombie process is created.
 How proper synchronization prevents zombie processes.
 
 
-Observations
+## Observations:
 
 wait() can collect the termination status of any completed child.
 waitpid() can specifically wait for a selected child.
 Without proper synchronization, a terminated child can remain as a zombie.
 Proper synchronization prevents zombie processes.
 
-Result
+## Result:
 The practical demonstrated process synchronization using wait() and waitpid() and showed how zombie processes can be identified and prevented.
