@@ -2,6 +2,8 @@
 #include <unistd.h>
 #include <signal.h>
 
+int count = 0;
+
 void handler(int sig)
 {
     if(sig == SIGINT)
@@ -12,6 +14,14 @@ void handler(int sig)
 
     else if(sig == SIGUSR1)
         printf("SIGUSR1 received\n");
+
+    count++;
+
+    if(count == 3)
+    {
+        printf("All signals received. Exiting...\n");
+        _exit(0);
+    }
 }
 
 int main()
